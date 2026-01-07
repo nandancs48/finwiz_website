@@ -57,12 +57,20 @@ document.getElementById("forgotForm")?.addEventListener("submit", async (e) => {
   });
 
   const data = await res.json();
-  alert(data.message);
+  
+  if (data.message === "User not found") {
+    alert("User not found. Please check your email.");
+    return;
+  }
 
-  // store email for reset step
+  
+  if (data.message === "OTP sent to email") {
+    alert("OTP sent to your email");
+  
   localStorage.setItem("resetEmail", email);
 
   window.location.href = "reset-password.html";
+  }
 });
 
 // ================= RESET PASSWORD =================
@@ -94,3 +102,4 @@ document.getElementById("resetForm")?.addEventListener("submit", async (e) => {
     window.location.href = "login.html";
   }
 });
+
