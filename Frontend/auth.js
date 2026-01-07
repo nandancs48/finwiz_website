@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = "https://finwiz-backend-d1za.onrender.com";
 
 console.log("auth.js loaded");
 
@@ -102,4 +102,5 @@ document.getElementById("resetForm")?.addEventListener("submit", async (e) => {
     window.location.href = "login.html";
   }
 });
+
 
